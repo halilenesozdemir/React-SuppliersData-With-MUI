@@ -4,7 +4,7 @@
 <br>
 <br>
 
-[![#Supply App](https://user-images.githubusercontent.com/89264559/173387322-81fde202-cd32-4061-8303-643dbb01dcb4.png)](https://www.youtube.com/watch?v=krl1jX1w9Qg)]
+[![#Supply App](https://user-images.githubusercontent.com/89264559/173387322-81fde202-cd32-4061-8303-643dbb01dcb4.png)](https://www.youtube.com/watch?v=krl1jX1w9Qg)
 <br>
 
 <p align=center>" To see a demo video, click the thumbnail image  (↑↑↑) " </p>
