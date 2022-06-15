@@ -1,10 +1,7 @@
-import ArrayStateSample from './stateSample/ArrayStateSample';
-import InputStateSample from './stateSample/InputStateSample';
-import StateSample from './stateSample/StateSample';
-import StateSample2 from './stateSample/StateSample2';
+import CategoryTable from './stateSample/CategoryTable';
 
 function App() {
-  return <InputStateSample />;
+  return <CategoryTable />;
 }
 
 export default App;
