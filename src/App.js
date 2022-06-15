@@ -1,8 +1,9 @@
 import EffectSample1 from './effectSample/EffectSample1';
+import UserList from './fetchSample/UserList';
 import CategoryTable from './stateSample/CategoryTable';
 
 function App() {
-  return <EffectSample1 />;
+  return <UserList />;
 }
 
 export default App;

@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 
-function UserList() {
+const UserList = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = () => {
+    // HTTP Get metodu ile veri çekiyoruz -> Default ayar
     fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
+      .then(res => {
+        return res.json();
+      })
       .then(data => {
         setTimeout(() => {
           setUsers(data);
@@ -16,11 +24,26 @@ function UserList() {
       .catch(() => {
         setLoading(false);
       });
-  }, []);
+  };
+
+  const removeUser = id => {
+    let requestOptions = {
+      method: 'DELETE',
+    };
+    // fetch ile mevcut servisten kullanıcı silinecek
+    fetch('https://jsonplaceholder.typicode.com/users/' + id, requestOptions)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        let newUsers = users.filter(q => q.id != id);
+        setUsers(newUsers);
+      });
+  };
 
   return (
     <>
-      {loading === true ? (
+      {loading == true ? (
         <span>loading...</span>
       ) : (
         <table>
@@ -28,19 +51,20 @@ function UserList() {
             <td>Id</td>
             <td>Name</td>
             <td>User Name</td>
-            <td>EMail</td>
+            <td>Email</td>
             <td>Remove</td>
           </tr>
+
           {users &&
-            users.map((item, key) => {
+            users.map((item, index) => {
               return (
-                <tr key={key}>
+                <tr key={index}>
                   <td>{item.id}</td>
                   <td>{item.name}</td>
                   <td>{item.username}</td>
                   <td>{item.email}</td>
                   <td>
-                    <button>Remove</button>
+                    <button onClick={() => removeUser(item.id)}>Remove</button>
                   </td>
                 </tr>
               );
@@ -49,6 +73,6 @@ function UserList() {
       )}
     </>
   );
-}
+};
 
 export default UserList;
