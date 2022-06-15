@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 
-const AddCategory = () => {
+const AddCategoryWithAxios = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState();
 
@@ -12,7 +12,7 @@ const AddCategory = () => {
       description: description,
     };
 
-    axios.post('https://northwind.vercel.app/api/categories', newCategory).then(res => console.log('Axios Response,', res));
+    axios.post('https://northwind.vercel.app/api/categories', newCategory).then(res => console.log('Axios Response,', res.data));
   };
 
   return (
@@ -32,4 +32,4 @@ const AddCategory = () => {
   );
 };
 
-export default AddCategory;
+export default AddCategoryWithAxios;
