@@ -1,8 +1,7 @@
-import './App.css';
-import SupplyTable from './stateSample/SupplyTable';
+import ArrayStateSample from './stateSample/ArrayStateSample';
 
 function App() {
-  return <SupplyTable />;
+  return <ArrayStateSample />;
 }
 
 export default App;

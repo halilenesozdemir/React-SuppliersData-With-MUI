@@ -49,26 +49,26 @@ function SupplyTable() {
 
   return (
     <>
-      <Container maxWidth="lg">
-        <Box sx={{ mt: 1, p: 1 }} display="flex" justifyContent="center">
-          <TextField size="small" color="secondary" focused hiddenLabel type="text" value={searchByName} onChange={e => setSearchByName(e.target.value)} placeholder="Search by Company Name..." />
-          <Button sx={{ p: 0.9, ml: 2 }} variant="contained" size="small" onClick={e => searchSuppliers()}>
+      <Container maxWidth='lg'>
+        <Box sx={{ mt: 1, p: 1 }} display='flex' justifyContent='center'>
+          <TextField size='small' color='secondary' focused hiddenLabel type='text' value={searchByName} onChange={e => setSearchByName(e.target.value)} placeholder='Search by Company Name...' />
+          <Button sx={{ p: 0.9, ml: 2 }} variant='contained' size='small' onClick={e => searchSuppliers()}>
             Search
           </Button>
         </Box>
 
         <div>
-          <Box display="flex" justifyContent="space-between">
-            <Button sx={{ p: 1, mt: 2, mb: 2 }} variant="contained" size="small" onClick={() => orderBy()}>
+          <Box display='flex' justifyContent='space-between'>
+            <Button sx={{ p: 1, mt: 2, mb: 2 }} variant='contained' size='small' onClick={() => orderBy()}>
               Order By Asc
             </Button>
-            <Button sx={{ p: 1, mt: 2, mb: 2 }} variant="contained" size="small" onClick={() => orderByDesc()}>
+            <Button sx={{ p: 1, mt: 2, mb: 2 }} variant='contained' size='small' onClick={() => orderByDesc()}>
               Order By Desc
             </Button>
           </Box>
         </div>
-        <TableContainer style={{ backgroundColor: 'yellow' }} component={Paper} variant="outlined" square>
-          <Table aria-label="simple table">
+        <TableContainer style={{ backgroundColor: 'yellow' }} component={Paper} variant='outlined' square>
+          <Table aria-label='simple table'>
             <TableHead>
               <TableRow>
                 <TableCell>Id</TableCell>
@@ -78,34 +78,34 @@ function SupplyTable() {
                 <TableCell>Phone</TableCell>
               </TableRow>
             </TableHead>
-            <TableBody></TableBody>
-
-            {supplyList &&
-              supplyList.map(item => {
-                return (
-                  <TableRow key={item.id}>
-                    <TableCell>{item.id}</TableCell>
-                    <TableCell>{item.companyName}</TableCell>
-                    <TableCell>{item.contactTitle}</TableCell>
-                    <TableCell>{item.address.country}</TableCell>
-                    <TableCell>{item.address.phone}</TableCell>
-                    <TableCell>
-                      <Button variant="contained" size="small" onClick={() => removeItem(item.id)}>
-                        Remove
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
+            <TableBody>
+              {supplyList &&
+                supplyList.map(item => {
+                  return (
+                    <TableRow key={item.id}>
+                      <TableCell>{item.id}</TableCell>
+                      <TableCell>{item.companyName}</TableCell>
+                      <TableCell>{item.contactTitle}</TableCell>
+                      <TableCell>{item.address.country}</TableCell>
+                      <TableCell>{item.address.phone}</TableCell>
+                      <TableCell>
+                        <Button variant='contained' size='small' onClick={() => removeItem(item.id)}>
+                          Remove
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+            </TableBody>
           </Table>
         </TableContainer>
-
         <div>
-          <Box display="flex" justifyContent="space-between" sx={{ mt: 2, mb: 5 }}>
-            <Button variant="contained" color="error" size="medium" onClick={() => removeAll()}>
+          {/* The "sx" prop is a shortcut for defining custom style that has access to the theme */}
+          <Box display='flex' justifyContent='space-between' sx={{ mt: 2, mb: 5 }}>
+            <Button variant='contained' color='error' size='medium' onClick={() => removeAll()}>
               Remove All
             </Button>
-            <Button variant="contained" color="success" size="medium" onClick={() => loadData()}>
+            <Button variant='contained' color='success' size='medium' onClick={() => loadData()}>
               Load Data
             </Button>
           </Box>
