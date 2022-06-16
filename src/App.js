@@ -8,6 +8,8 @@ import ProductList from './routerSample/ProductList';
 import { Link } from 'react-router-dom';
 import ProductDetails from './routerSample/ProductDetails';
 import DataDisplay from './materialSample/DataDisplay';
+import ProductDataGrid from './materialSample/ProductDataGrid';
+import AutoCompleteSample from './materialSample/AutoCompleteSample';
 
 const App = () => {
   return (
@@ -30,6 +32,12 @@ const App = () => {
         <li>
           <Link to='/datadisplay'>Data Display</Link>
         </li>
+        <li>
+          <Link to='/productdatagrid'>Product Data Grid</Link>
+        </li>
+        <li>
+          <Link to='/autocompletesample'>AutoComplete Sample</Link>
+        </li>
       </ul>
 
       <Routes>
@@ -40,6 +48,8 @@ const App = () => {
         <Route path='/urunler/:id' element={<ProductDetails />}></Route>
         <Route path='/datadisplay' element={<DataDisplay />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
+        <Route path='/productdatagrid' element={<ProductDataGrid />}></Route>
+        <Route path='/autocompletesample' element={<AutoCompleteSample />}></Route>
       </Routes>
       <h1>Site Footer</h1>
     </>
