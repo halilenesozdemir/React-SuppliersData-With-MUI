@@ -7,6 +7,7 @@ import NoMatch from './routerSample/NoMatch';
 import ProductList from './routerSample/ProductList';
 import { Link } from 'react-router-dom';
 import ProductDetails from './routerSample/ProductDetails';
+import DataDisplay from './materialSample/DataDisplay';
 
 const App = () => {
   return (
@@ -26,6 +27,9 @@ const App = () => {
         <li>
           <Link to='/urunler'>Products</Link>
         </li>
+        <li>
+          <Link to='/datadisplay'>Data Display</Link>
+        </li>
       </ul>
 
       <Routes>
@@ -34,6 +38,7 @@ const App = () => {
         <Route path='/iletisim' element={<ContactPage />}></Route>
         <Route path='/urunler' element={<ProductList />}></Route>
         <Route path='/urunler/:id' element={<ProductDetails />}></Route>
+        <Route path='/datadisplay' element={<DataDisplay />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
       </Routes>
       <h1>Site Footer</h1>
