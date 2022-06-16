@@ -1,21 +1,12 @@
-import EffectSample1 from './effectSample/EffectSample1';
-import AddCategory from './fetchSample/AddCategory';
-import AddCategoryWithAxios from './fetchSample/AddCategoryWithAxios';
-import UserList from './fetchSample/UserList';
-import ProductDetail from './propsSample/ProductDetail';
-import PropClickEventSample from './propsSample/PropClickEventSample';
-import TechButton from './propsSample/TechButton';
-import CategoryTable from './stateSample/CategoryTable';
+import React from 'react';
+import SupplierList from './propsSample/SupplierList';
 
-function App() {
-  const hola = () => {
-    alert('Hola');
-  };
+const App = () => {
   return (
     <>
-      <PropClickEventSample hello={hola}></PropClickEventSample>
+      <SupplierList></SupplierList>
     </>
   );
-}
+};
 
 export default App;
