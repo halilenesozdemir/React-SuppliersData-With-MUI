@@ -3,13 +3,14 @@ import AddCategory from './fetchSample/AddCategory';
 import AddCategoryWithAxios from './fetchSample/AddCategoryWithAxios';
 import UserList from './fetchSample/UserList';
 import ProductDetail from './propsSample/ProductDetail';
+import TechButton from './propsSample/TechButton';
 import CategoryTable from './stateSample/CategoryTable';
 
 function App() {
   return (
     <>
-      <ProductDetail name='Iphone' price={5000} description='Apple Ürünü...'></ProductDetail>
-      <ProductDetail name='Samsung' price={3000} description='Samsung Ürünü...'></ProductDetail>
+      <div>Form</div>
+      <TechButton title='Add' width={75} height={75}></TechButton>
     </>
   );
 }
